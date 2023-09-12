@@ -2,15 +2,15 @@ import React from "react";
 
 const Navbar = () => {
     return (
-    <div className="mx-auto border bg-slate-50 rounded">
+    <div className="border bg-slate-50 rounded">
       <div className="flex flex-row justify-between ml-10 mr-10">
         <div>
-          <a className=" font-serif text-4xl" href="/">
+          <a className=" text-2xl font-serif md:text-4xl" href="/">
             Alenas Logo!
           </a>
-          <p className=" font-sans text-sm">world's most famous brand</p>
+          <p className=" text-xs font-sans md:text-sm">world's most famous brand</p>
         </div>
-        <ul className=" flex flex-row gap-10 divide-double divide-gray-100 font-sans justify-between ">
+        <ul className="hidden md:flex flex-row gap-10 divide-double divide-gray-100 font-sans justify-between">
             <button className=" hover:bg-gray-100 ">
                 Summer
             </button>
@@ -25,7 +25,7 @@ const Navbar = () => {
             </button>
         </ul>
 
-        <div className="flex flex-row gap-10 justify-end">
+        <div className="gap-5 flex flex-row md:gap-10 justify-end">
           <button className="hover:scale-110">
             <svg
               xmlns="http://www.w3.org/2000/svg"
