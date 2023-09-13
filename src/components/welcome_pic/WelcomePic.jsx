@@ -2,7 +2,7 @@ import React from 'react'
 
 const WelcomePic = () => {
   return (
-    <div className='min-h-screen flex justify-center'>
+    <div className='w-full h-full flex justify-center'>
         <div>
             <img
             className='shadow-2xl shadow-slate-500/50 contrast-125 drop-shadow-2xl'

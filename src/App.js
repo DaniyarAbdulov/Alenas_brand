@@ -7,6 +7,7 @@ import Modal from './components/Modal';
 import CustomModalRegister from './components/CustomModalView/CustomModalRegister';
 import CustomVideoGreeting from './components/CustomModalView/CustomVideoGreeting';
 import SlideShow from './components/SlideShow/SlideShow';
+import MidElement from './components/MidElement/MidElement';
 
 
 function App() {
@@ -15,18 +16,23 @@ function App() {
 
   return (
     <div className='min-h-screen bg-white'>
-      <Banner setShowModal={setShowModal} setShowVideo={setShowVideo} />
+
+      <Banner setShowModal={setShowModal} setShowVideo={setShowVideo}
+      />
       <Navbar />
       <div className='flex justify-center flex-col'>
         <WelcomePic />
-        <SlideShow/>
+        <SlideShow />
+        <MidElement />
+
+
       </div>
       {showModal && (
         <Modal
           isVisible={showModal}
           onClose={() => setShowModal(false)}
           children={<CustomModalRegister />}
-        /> 
+        />
       )}
       {showVideo && (
         <Modal
