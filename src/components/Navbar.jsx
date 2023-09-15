@@ -1,32 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import { NavLink } from "react-browser-router";
+import CustomButtonMenu from "./CustomButtonMenu/CustomButtonMenu";
+import ProfileImages from "./store/ProfileImages";
 
 const Navbar = () => {
-    return (
+  const [showMenu, setShowMenu] = useState(false);
+
+  return (
     <div className="border bg-slate-50 rounded">
       <div className="flex flex-row justify-between ml-10 mr-10">
         <div>
-          <a className=" text-2xl font-serif md:text-4xl" href="/">
+          <NavLink className=" text-2xl font-serif md:text-4xl" to="/">
             Alenas Logo!
-          </a>
-          <p className=" text-xs font-sans md:text-sm">world's most famous brand</p>
+          </NavLink>
+          <p className=" text-xs font-sans md:text-sm">
+            world's most famous brand
+          </p>
         </div>
         <ul className="hidden md:flex flex-row gap-10 divide-double divide-gray-100 font-sans justify-between">
-            <button className=" hover:bg-gray-100 ">
-                Summer
-            </button>
-            <button className=" hover:bg-gray-100 ">
-                Autumn
-            </button>
-            <button className=" hover:bg-gray-100 ">
-                Winter
-            </button>
-            <button className=" hover:bg-gray-100 ">
-                Spring
-            </button>
+          <button className=" hover:bg-gray-100 ">Summer</button>
+          <button className=" hover:bg-gray-100 ">Autumn</button>
+          <button className=" hover:bg-gray-100 ">Winter</button>
+          <button className=" hover:bg-gray-100 ">Spring</button>
         </ul>
 
         <div className="gap-5 flex flex-row md:gap-10 justify-end">
-          <button className="hover:scale-110">
+          <button
+            onClick={() => setShowMenu((prev) => !prev)}
+            className="hover:scale-110"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -76,7 +78,7 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-      
+      {showMenu && <CustomButtonMenu text="My Profile" image={ProfileImages} />}
     </div>
   );
 };

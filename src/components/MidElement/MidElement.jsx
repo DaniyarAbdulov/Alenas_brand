@@ -5,7 +5,7 @@ const MidElement = () => {
     <div className=" ">
       <div className="">
         <div className="  bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100">
-          <text className=" text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl flex justify-center font-sans font-extrabold ">
+          <text className=" text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl flex justify-center font-serif font-extrabold ">
             <p>Alena's brand</p>
           </text>
         </div>
@@ -14,20 +14,18 @@ const MidElement = () => {
             <img
               src="https://images.unsplash.com/photo-1469504512102-900f29606341?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80"
               alt="Image"
-              className=""
             />
-            <button className="absolute bottom-10 flex self-center items-center justify-center border-t-2 border-b-2 hover:animate-bounce">
-              Showe More
+            <button className="absolute bottom-10 flex border-t-2 border-b-2 hover:scale-125">
+              Click
             </button>
           </div>
           <div className="relative flex justify-center items-center hover:opacity-90">
             <img
               alt="Image"
-              className=""
               src="https://images.unsplash.com/photo-1524681051551-4d2ef100779c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80"
             />
-            <button className="absolute bottom-10 flex self-center items-center justify-center border-t-2 border-b-2 hover:animate-bounce">
-              Showe More
+            <button className="absolute bottom-10 flex  border-t-2 border-b-2 hover:scale-125">
+              Click
             </button>
           </div>
         </div>
