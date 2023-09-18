@@ -11,6 +11,7 @@ import MidElement from './components/MidElement/MidElement';
 import CustomCookiesNotification from './components/CustomCoockiesNotification/CustomCookiesNotification';
 import ButtomElement from './components/BottomElements/ButtomElement';
 import { BrowserRouter } from 'react-browser-router';
+import CustomWallteButton from './components/CustomButtonMenu/CustomWallteButton';
 
 
 
@@ -27,11 +28,13 @@ function App() {
   return (
     <BrowserRouter>
       <div className='min-h-screen bg-white'>
-        
+
+
         <div>
           <div>
             <Banner setShowModal={setShowModal} setShowVideo={setShowVideo} />
             <Navbar />
+
           </div>
           <div>
             <div className='flex justify-center flex-col'>
@@ -44,6 +47,12 @@ function App() {
 
 
         </div>
+        {showCookies && (
+          <CustomCookiesNotification
+            isVisible={showCookies}
+            onClose={() => setShowCoockies(false)}
+          />
+        )}
         {showModal && (
           <Modal
             isVisible={showModal}
@@ -59,12 +68,7 @@ function App() {
 
           />
         )}
-        {showCookies && (
-          <CustomCookiesNotification
-            isVisible={showCookies}
-            onClose={() => setShowCoockies(false)}
-          />
-        )}
+
 
 
       </div>

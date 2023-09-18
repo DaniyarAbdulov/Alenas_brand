@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { NavLink } from "react-browser-router";
 import CustomButtonMenu from "./CustomButtonMenu/CustomButtonMenu";
 import ProfileImages from "./store/ProfileImages";
+import CustomWallteButton from "./CustomButtonMenu/CustomWallteButton";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [showWallet, setShowWallet] = useState(false)
 
   return (
     <div className="border bg-slate-50 rounded">
@@ -44,7 +46,9 @@ const Navbar = () => {
               />
             </svg>
           </button>
-          <button className="hover:scale-110">
+          <button 
+          onClick={() => setShowWallet((prev) => !prev)}
+          className="hover:scale-110">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -79,6 +83,7 @@ const Navbar = () => {
         </div>
       </div>
       {showMenu && <CustomButtonMenu text="My Profile" image={ProfileImages} />}
+      {showWallet && <CustomWallteButton/>}
     </div>
   );
 };

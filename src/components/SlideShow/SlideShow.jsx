@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import pictures from "../store/pictures";
+import './SlideShowModule.css'
+
 
 const SlideShow = () => {
   const [startIndex, setStartIndex] = useState(0);
@@ -64,9 +66,11 @@ const SlideShow = () => {
               />
             </svg>
           </button>
-          <div className="flex justify-center flex-row gap-1 sm:gap-2 md:gap-3 lg:gap-4 xl:gap-5 2xl:gap-6">
+          <div className="  flex justify-center flex-row gap-1 sm:gap-2 md:gap-3 lg:gap-4 xl:gap-5 2xl:gap-6">
             {visiblePictures.map((p) => (
-              <div key={p.id}>
+              <div key={p.id}
+              className="slide-in"
+              >
                 <h1 className=" hidden sm:flex sm:text-sm md:text-2xl lg:text-4xl font-serif">
                   Collection
                 </h1>
@@ -77,7 +81,7 @@ const SlideShow = () => {
                   <img
                     src={p.imgSrc}
                     alt={`Image ${p.id}`}
-                    className=" w-96 h-80 object-center object-cover rounded-xl  hover:contrast-75 hover:opacity-75 object-center"
+                    className="  w-96 h-80 object-center object-cover rounded-xl  hover:contrast-75 hover:opacity-75 object-center"
                   />
                 </div>
               </div>

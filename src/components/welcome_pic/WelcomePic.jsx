@@ -1,8 +1,9 @@
 import React from "react";
+import './WelcomeModule.css'
 
 const WelcomePic = () => {
   return (
-    <div className="w-full h-full flex justify-center">
+    <div className=" slide-in w-full h-full flex justify-center">
       <div>
         <img
           className="shadow-2xl shadow-slate-500/50 contrast-125 drop-shadow-2xl"

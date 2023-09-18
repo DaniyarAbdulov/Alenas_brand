@@ -3,7 +3,7 @@ import React from "react";
 const CustomCookiesNotification = ({onClose, isVisible}) => {
     if (!isVisible) return null;
     return (
-    <div className="fixed inset-10 flex items-end">
+    <div className="fixed inset-0 bg-opacity-25 backdrop-blur-sm flex items-end">
       <div className="rounded-lg shadow-pink-400 shadow-lg bg-slate-200 flex flex-col px-10 py-5">
         <text>
           <h1 className="font-serif text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">Coockies Notification!{' ;-)'}</h1>
