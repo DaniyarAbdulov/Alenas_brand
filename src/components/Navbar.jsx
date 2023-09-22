@@ -3,10 +3,12 @@ import { NavLink } from "react-browser-router";
 import CustomButtonMenu from "./CustomButtonMenu/CustomButtonMenu";
 import ProfileImages from "./store/ProfileImages";
 import CustomWallteButton from "./CustomButtonMenu/CustomWallteButton";
+import CustomPhoneMenu from "./CustomPhoneMenu/CustomPhoneMenu";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [showWallet, setShowWallet] = useState(false)
+  const [showWallet, setShowWallet] = useState(false);
+  const [showCallMenu, setShowCallMenu] = useState(false);
 
   return (
     <div className="border bg-slate-50 rounded">
@@ -15,15 +17,25 @@ const Navbar = () => {
           <NavLink className=" text-2xl font-serif md:text-4xl" to="/">
             Alenas Logo!
           </NavLink>
-          <p className=" text-xs font-sans md:text-sm">
+          <p className="text-xs font-sans md:text-sm">
             world's most famous brand
           </p>
         </div>
-        <ul className="hidden md:flex flex-row gap-10 divide-double divide-gray-100 font-sans justify-between">
-          <button className=" hover:bg-gray-100 ">Summer</button>
-          <button className=" hover:bg-gray-100 ">Autumn</button>
-          <button className=" hover:bg-gray-100 ">Winter</button>
-          <button className=" hover:bg-gray-100 ">Spring</button>
+        <ul className="hidden md:flex flex-row font-sans">
+          <div className=" flex justify-end gap-4 mt-2 lg:gap-8 xl:gap-10">
+            <NavLink to="/summer">
+              <button className=" hover:bg-gray-100 py-1 md:py-2">Summer</button>
+            </NavLink>
+            <NavLink to="/autumn">
+              <button className=" hover:bg-gray-100 py-1 md:py-2">Autumn</button>
+            </NavLink>
+            <NavLink to="/winter">
+              <button className=" hover:bg-gray-100 py-1 md:py-2">Winter</button>
+            </NavLink>
+            <NavLink to="/spring">
+              <button className=" hover:bg-gray-100 py-1 md:py-2">Spring</button>
+            </NavLink>
+          </div>
         </ul>
 
         <div className="gap-5 flex flex-row md:gap-10 justify-end">
@@ -46,9 +58,10 @@ const Navbar = () => {
               />
             </svg>
           </button>
-          <button 
-          onClick={() => setShowWallet((prev) => !prev)}
-          className="hover:scale-110">
+          <button
+            onClick={() => setShowWallet((prev) => !prev)}
+            className="hover:scale-110"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -64,7 +77,10 @@ const Navbar = () => {
               />
             </svg>
           </button>
-          <button className="hover:scale-110">
+          <button
+            onClick={() => setShowCallMenu(true)}
+            className="hover:scale-110"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -83,7 +99,8 @@ const Navbar = () => {
         </div>
       </div>
       {showMenu && <CustomButtonMenu text="My Profile" image={ProfileImages} />}
-      {showWallet && <CustomWallteButton/>}
+      {showWallet && <CustomWallteButton />}
+      {showCallMenu && <CustomPhoneMenu setShowCallMenu={setShowCallMenu} />}
     </div>
   );
 };

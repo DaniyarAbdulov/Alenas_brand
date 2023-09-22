@@ -1,80 +1,31 @@
-import { useState } from 'react';
 import './App.css';
-import Banner from './components/Banner';
-import Navbar from './components/Navbar';
-import WelcomePic from './components/welcome_pic/WelcomePic';
-import Modal from './components/Modal';
-import CustomModalRegister from './components/CustomModalView/CustomModalRegister';
-import CustomVideoGreeting from './components/CustomModalView/CustomVideoGreeting';
-import SlideShow from './components/SlideShow/SlideShow';
-import MidElement from './components/MidElement/MidElement';
-import CustomCookiesNotification from './components/CustomCoockiesNotification/CustomCookiesNotification';
-import ButtomElement from './components/BottomElements/ButtomElement';
-import { BrowserRouter } from 'react-browser-router';
-import CustomWallteButton from './components/CustomButtonMenu/CustomWallteButton';
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import NotFoundError from './components/NotFound/NotFound';
+import { Home } from './components/Home';
+import Summer from './components/SummerCollection/Summer';
+import Layout from './components/Layout';
 
 
 
 
 function App() {
-  const [showModal, setShowModal] = useState(false);
-  const [showVideo, setShowVideo] = useState(false);
-  const [showCookies, setShowCoockies] = useState(true);
-
-
-
-
   return (
     <BrowserRouter>
-      <div className='min-h-screen bg-white'>
-
-
-        <div>
-          <div>
-            <Banner setShowModal={setShowModal} setShowVideo={setShowVideo} />
-            <Navbar />
-
-          </div>
-          <div>
-            <div className='flex justify-center flex-col'>
-              <WelcomePic />
-              <SlideShow />
-              <MidElement />
-              <ButtomElement />
-            </div>
-          </div>
-
-
-        </div>
-        {showCookies && (
-          <CustomCookiesNotification
-            isVisible={showCookies}
-            onClose={() => setShowCoockies(false)}
-          />
-        )}
-        {showModal && (
-          <Modal
-            isVisible={showModal}
-            onClose={() => setShowModal(false)}
-            children={<CustomModalRegister />}
-          />
-        )}
-        {showVideo && (
-          <Modal
-            isVisible={showVideo}
-            onClose={() => setShowVideo(false)}
-            children={<CustomVideoGreeting />}
-
-          />
-        )}
-
-
-
+      <div className='min-h-screen bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-100 to-gray-900'>
+        <Routes>
+          <Route path='/' element={<Layout/>}>
+            <Route index element={<Home/>}/>
+            <Route path='summer' element={<Summer />} />
+            <Route path='*' element={<NotFoundError />} />
+          </Route>
+        </Routes>
       </div>
-    </BrowserRouter>
-
-  );
+    </BrowserRouter>    
+    );
 }
+
+
+
+
 
 export default App;

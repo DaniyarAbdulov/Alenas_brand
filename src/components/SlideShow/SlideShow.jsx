@@ -81,7 +81,7 @@ const SlideShow = () => {
                   <img
                     src={p.imgSrc}
                     alt={`Image ${p.id}`}
-                    className="  w-96 h-80 object-center object-cover rounded-xl  hover:contrast-75 hover:opacity-75 object-center"
+                    className="  w-96 h-80 object-center object-cover rounded-xl  hover:contrast-75 hover:opacity-75"
                   />
                 </div>
               </div>

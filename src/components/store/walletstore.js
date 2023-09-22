@@ -15,7 +15,8 @@ const walletstore = [
     description: 'Have A Good Day Graphic T-Shirt',
     price: '€10.40',
     date: '12/12/2023'
-  }      
+  }      ,
+  
 ]
 
 export default walletstore;
