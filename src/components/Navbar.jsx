@@ -11,7 +11,7 @@ const Navbar = () => {
   const [showCallMenu, setShowCallMenu] = useState(false);
 
   return (
-    <div className="border bg-slate-50 rounded">
+    <nav className="border bg-slate-50 rounded">
       <div className="flex flex-row justify-between ml-10 mr-10">
         <div>
           <NavLink className=" text-2xl font-serif md:text-4xl" to="/">
@@ -24,16 +24,24 @@ const Navbar = () => {
         <ul className="hidden md:flex flex-row font-sans">
           <div className=" flex justify-end gap-4 mt-2 lg:gap-8 xl:gap-10">
             <NavLink to="/summer">
-              <button className=" hover:bg-gray-100 py-1 md:py-2">Summer</button>
+              <button className=" hover:bg-gray-100 py-1 md:py-2">
+                Summer
+              </button>
             </NavLink>
             <NavLink to="/autumn">
-              <button className=" hover:bg-gray-100 py-1 md:py-2">Autumn</button>
+              <button className=" hover:bg-gray-100 py-1 md:py-2">
+                Autumn
+              </button>
             </NavLink>
             <NavLink to="/winter">
-              <button className=" hover:bg-gray-100 py-1 md:py-2">Winter</button>
+              <button className=" hover:bg-gray-100 py-1 md:py-2">
+                Winter
+              </button>
             </NavLink>
             <NavLink to="/spring">
-              <button className=" hover:bg-gray-100 py-1 md:py-2">Spring</button>
+              <button className=" hover:bg-gray-100 py-1 md:py-2">
+                Spring
+              </button>
             </NavLink>
           </div>
         </ul>
@@ -101,7 +109,7 @@ const Navbar = () => {
       {showMenu && <CustomButtonMenu text="My Profile" image={ProfileImages} />}
       {showWallet && <CustomWallteButton />}
       {showCallMenu && <CustomPhoneMenu setShowCallMenu={setShowCallMenu} />}
-    </div>
+    </nav>
   );
 };
 

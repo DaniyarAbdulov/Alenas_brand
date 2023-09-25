@@ -15,7 +15,7 @@ const Layout = () => {
       <Banner setShowModal={setShowModal} setShowVideo={setShowVideo} />
       <Navbar />
       <Outlet />
-      <Footer/>
+      <Footer />
       {showModal && (
         <Modal
           isVisible={showModal}

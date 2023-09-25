@@ -11,17 +11,17 @@ import Layout from './components/Layout';
 function App() {
   return (
     <BrowserRouter>
-      <div className='min-h-screen bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-100 to-gray-900'>
+      <div className='min-h-screen bg-slate-50'>
         <Routes>
-          <Route path='/' element={<Layout/>}>
-            <Route index element={<Home/>}/>
+          <Route path='/' element={<Layout />}>
+            <Route index element={<Home />} />
             <Route path='summer' element={<Summer />} />
             <Route path='*' element={<NotFoundError />} />
           </Route>
         </Routes>
       </div>
-    </BrowserRouter>    
-    );
+    </BrowserRouter>
+  );
 }
 
 
