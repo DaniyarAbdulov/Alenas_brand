@@ -1,18 +1,22 @@
 import React from "react";
-import { NavLink } from "react-browser-router";
+import { NavLink } from "react-router-dom";
 
 const buttons = [
   {
     label: "Track My Order",
+    link: "/trackmyorder",
   },
   {
     label: "My Account",
+    link: "/myaccount",
   },
   {
     label: "Returns",
+    link: "/returns",
   },
   {
     label: "Delivery",
+    link: "/delivery",
   },
 ];
 
@@ -96,24 +100,26 @@ const aboutUs = [
 
 const Footer = () => {
   return (
-    <div className=" mt-10 bg-white">
+    <div className=" mt-10 bg-white py-2">
       <div>
         <div className="flex flex-col justify-between divide-x-2 divide-solid divide-gray-100  lg:flex-row gap-5 md:gap-0">
           <div className=" ml-5 font-sans text-sm flex flex-col ">
             <h1 className=" font-bold">Quick Links</h1>
             <ul className="mt-5 mb-2 sm:mb-3 md:mb-4 lg:m-5">
               {buttons.map((button, i) => (
-                <li key={i} className="mt-2">
-                  <button className="bg-gray-100 w-full py-2 pl-4 pr-28 flex items-start whitespace-nowrap">
-                    {button.label}
-                  </button>
-                </li>
+                <ul key={i} to={button.link} className="mt-2 gap-5">
+                  <NavLink to={button.link}>
+                    <button className="bg-gray-100 hover:underline w-full py-2 pl-4 pr-28 flex items-start whitespace-nowrap">
+                      {button.label}
+                    </button>
+                  </NavLink>
+                </ul>
               ))}
             </ul>
           </div>
 
           <div className=" hidden lg:flex">
-            <div className=" ml-5 font-sans text-sm">
+            <div className=" ml-5 mr-5 font-sans text-sm">
               <h1 className="font-bold">Customer care</h1>
               <ul className="flex flex-col mt-2 md:-5">
                 {cutomerCare.map((cc, i) => (
@@ -129,7 +135,7 @@ const Footer = () => {
             </div>
           </div>
           <div className=" hidden lg:flex">
-            <div className=" ml-5 font-sans text-sm">
+            <div className=" ml-5 mr-5  font-sans text-sm">
               <h1 className=" font-bold">About us & more</h1>
               <ul className=" flex flex-col mt-2 md:-5">
                 {aboutUs.map((a, i) => (
@@ -146,7 +152,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <div className=" ml-5 mr-20 font-sans text-sm mt-2">
+            <div className=" ml-5 mr-20 font-sans text-sm ">  
               <h1 className=" font-bold">Join the Party</h1>
               <div className=" flex flex-col items-start mt-4">
                 <form>

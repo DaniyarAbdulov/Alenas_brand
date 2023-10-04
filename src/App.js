@@ -4,12 +4,14 @@ import NotFoundError from './components/NotFound/NotFound';
 import { Home } from './components/Home';
 import Summer from './components/SummerCollection/Summer';
 import Layout from './components/Layout';
+import TrackMyOrder from './components/FooterElements/TrackMyOrder';
+import MyAccount from './components/FooterElements/MyAccount';
 
 
 
 
 function App() {
-  return (
+    return (
     <BrowserRouter>
       <div className='min-h-screen bg-slate-50'>
         <Routes>
@@ -17,6 +19,8 @@ function App() {
             <Route index element={<Home />} />
             <Route path='summer' element={<Summer />} />
             <Route path='*' element={<NotFoundError />} />
+            <Route path='trackmyorder' element={<TrackMyOrder/>}/>
+            <Route path='myaccount' element={<MyAccount/>}/>
           </Route>
         </Routes>
       </div>
