@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-browser-router";
+import { NavLink } from "react-router-dom";
 import CustomButtonMenu from "./CustomButtonMenu/CustomButtonMenu";
 import ProfileImages from "./store/ProfileImages";
 import CustomWallteButton from "./CustomButtonMenu/CustomWallteButton";
