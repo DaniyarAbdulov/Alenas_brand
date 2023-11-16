@@ -17,6 +17,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path='/alenasbrand' element={<Home/>}/>
             <Route path='summer' element={<Summer />} />
             <Route path='*' element={<NotFoundError />} />
             <Route path='trackmyorder' element={<TrackMyOrder/>}/>
